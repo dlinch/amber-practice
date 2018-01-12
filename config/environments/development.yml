@@ -1,0 +1,33 @@
+secret_key_base: 7C8j-0mPVl29NhFxmfuJ6ow6INcx_q8gCGf5Oj8t8gw
+port: 3000
+name: amber-practice
+logging:
+  severity: debug
+  colorize: true
+  filter:
+    - password
+    - confirm_password
+  skip:
+    -
+  context:
+    - request
+    - session
+    - headers
+    - cookies
+    - params
+
+host: 0.0.0.0
+port_reuse: true
+process_count: 1
+# ssl_key_file:
+# ssl_cert_file:
+redis_url: "redis://localhost:6379"
+database_url: postgres://postgres:@localhost:5432/amber_practice_development
+session:
+  key: amber.session
+  store: signed_cookie
+  expires: 0
+
+secrets:
+  description: Store your development secrets credentials and settings here.
+
